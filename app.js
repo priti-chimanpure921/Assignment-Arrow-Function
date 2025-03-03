@@ -1,3 +1,4 @@
+
 //Implementing the concept of Arrow function
 const add = (a,b)=> a+b ; //return statement and paranthesis are optional in return single value in arrow functions
 console.log(add(2,3));
@@ -48,3 +49,51 @@ console.log("window object");
 student.getInfo1();//window object 
 console.log("student object");
 student.getInfo2();//student object
+
+
+//Write an arrow function named arrayAverage that accepts an array of numbers and returns the average of those numbers.
+const arrayAverage = (arr)=>{
+    let sum = 0;
+    let avg = 0;
+    for(ele of arr)
+    {
+        sum = sum + ele;    
+    }
+    return sum/arr.length ;
+};
+
+console.log("Average of array element is ", arrayAverage([1,2,3,4,5,6]));
+
+//Write an arrow function named isEven() that takes a single number as argument and returns if it is even or not.
+const isEven = n => n%2 == 0;
+if(isEven(6))
+{
+    console.log("Number is even...");
+}
+
+//What is the output of the following code:
+const object = { 
+    message:'Hello,World!',
+    logMessage()
+    {
+        console.log(this.message);
+    }
+};
+setTimeout(object.logMessage,1000);//window object 
+
+//What is the output of the following code
+let length = 4;
+function callback()
+{
+    console.log(this.length);
+}
+const object1 = {
+    length:5,
+    method(callback)
+    {
+        console.log(callback);
+        callback();
+    },
+};
+object1.method(callback,1,2);
+
